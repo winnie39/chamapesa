@@ -28,7 +28,7 @@ if [ -n "$ip_address" ]; then
   
   sshpass -p "$STOCKBUll_PASSWORD" ssh "root@$ip_address" '
   source /root/.nvm/nvm.sh 
-  cd /var/www/laravel
+  cd /var/www/chamapesa
   git stash
   git pull
   # php artisan migrate
@@ -40,8 +40,8 @@ if [ -n "$ip_address" ]; then
   php artisan optimize
   php artisan view:cache
   php artisan config:clear
-  sudo chmod -R 775 /var/www/cryptobond/storage
-  sudo chown -R www-data:www-data /var/www/cryptobond/storage
+  sudo chmod -R 775 /var/www/chamapesa/storage
+  sudo chown -R www-data:www-data /var/www/chamapesa/storage
   exit
   '
 
