@@ -110,10 +110,12 @@ Route::get('/test-mail', function () {
 
         echo "SENDING" . $transaction['id'];
 
+        $appName = config('app.name');
+
         $amount  =  number_format($transaction['amount']);
         $name = explode(' ', $transaction['user']['name'])[0];
         $message = "Dear {$name}, your withdrawal of {$amount}{$transaction['currency']} has been received to {$transaction['address']}.
-Trueflip in TZ";
+$appName in TZ";
 
         // dispatch(function () use ($message, $transaction) {
         CelcomHelper::sendMessage($transaction->user->phone_number, $message);

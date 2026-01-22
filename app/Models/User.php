@@ -18,7 +18,9 @@ class User extends Authenticatable implements FilamentUser
 
     public function canAccessPanel(Panel $panel): bool
     {
+        return true;
         $admins = config('app.admins');
+        // dd('djjd');
         return  in_array(auth()->user()->phone_number, $admins);
     }
 

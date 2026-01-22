@@ -73,8 +73,9 @@ class DepositController extends Controller
 
             $name = explode(' ', $transaction['user']['name'])[0];
 
+            $appName = config('app.name');
             $message = "Dear {$name}, your deposit of {$amount}{$transaction['currency']} has been approved successfully.  
-Invest more to earn more with Trueflip in TZ";
+Invest more to earn more with $appName in TZ";
 
             dispatch(function () use ($message, $transaction) {
                 CelcomHelper::sendMessage($transaction->user->phone_number, $message);
@@ -101,7 +102,7 @@ Invest more to earn more with Trueflip in TZ";
             'price_amount' => $amount + 2.6,
             'price_currency' => 'usd',
             'order_id' =>  $orderId,
-            'order_description' => 'TRUEFLIPTZ',
+            'order_description' => config('app.name') . ' Deposit',
             'success_url' => url('/api/deposit-success/' . $code),
             'cancel_url' =>  url('/api/deposit-failure/' . $code),
         ]);

@@ -1,6 +1,6 @@
 <meta itemprop="name" content=" {{ config('app.name') }}  AI">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Unlock the Potential of Trading with TRUEFLIP.">
+<meta property="og:title" content="Unlock the Potential of Trading with {{ config('app.name') }} .">
 <meta property="og:description"
     content="Elevate Your Trading: Experience the power of AI-driven algorithms that adapt and learn in real-time, ensuring you stay ahead of market trends and capitalize on opportunities with unprecedented precision.">
 <meta property="og:image" content="{{ url('/assets/images/whatsapp.png') }}" />

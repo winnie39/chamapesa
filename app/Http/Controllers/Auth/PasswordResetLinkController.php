@@ -45,8 +45,10 @@ class PasswordResetLinkController extends Controller
         ]);
 
 
+        $appName = config('app.name');
+
         $message = "Dear {$user['name']}, your password reset code is {$resetCode}.
-Trueflip in TZ";
+$appName in TZ";
 
 
         CelcomHelper::sendMessage($user->phone_number, $message);

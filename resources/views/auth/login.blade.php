@@ -8,7 +8,8 @@
                         <div class="account-card__header bg_img overlay--one" data-background="assets/images/bg/bg-6.jpg">
                             <h2 class="section-title">Welcome to <span class="base--color"> {{ config('app.name') }} </span>
                             </h2>
-                            <p>Welcome to TrueFlip Investment, where hourly returns redefine investing. Join us now for high
+                            <p>Welcome to {{ config('app.name') }} Investment, where hourly returns redefine investing. Join
+                                us now for high
                                 returns and financial empowerment. Register today and unlock your path to prosperity!</p>
                         </div>
                         <div class="account-card__body">

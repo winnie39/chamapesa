@@ -113,7 +113,9 @@ class WithdrawController extends Controller
             }
 
 
-            Toastr::info("You have less liquid trueflip shares, please try a lower amount or promo withdrawal");
+            $appName = config('app.name');
+
+            Toastr::info("You have less liquid $appName shares, please try a lower amount or promo withdrawal");
             return back();
         }
 
@@ -189,10 +191,12 @@ class WithdrawController extends Controller
         $transaction->update([
             'status' => Transaction::COMPLETED,
         ]);
+        $appName = config('app.name');
+
         $amount  =  number_format($transaction['amount']);
         $name = explode(' ', $transaction['user']['name'])[0];
         $message = "Dear {$name}, your withdrawal of {$amount}{$transaction['currency']} has been received to {$transaction['address']}.
-Trueflip in TZ";
+$appName in TZ";
 
         dispatch(function () use ($message, $transaction) {
             CelcomHelper::sendMessage($transaction->user->phone_number, $message);
