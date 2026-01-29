@@ -35,6 +35,7 @@ return [
     'env' => env('APP_ENV', 'production'),
     'developermail' => 'stewiegeee9@gmail.com',
     'currency' => 'USD',
+    'local-currency' => 'TZS',
 
     /*
     |--------------------------------------------------------------------------
