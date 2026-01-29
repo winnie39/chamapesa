@@ -97,7 +97,7 @@ class RankingController extends Controller
         $user->wallet()->increment('profits', $ranking['reward']);
 
 
-        Toastr::success('Congratulations, task completed successfully. You have won ' . $ranking['reward'] . 'KES');
+        Toastr::success('Congratulations, task completed successfully. You have won ' . $ranking['reward'] . config('app.local-currency'));
 
         return back();
     }
