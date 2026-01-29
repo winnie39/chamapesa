@@ -19,11 +19,7 @@ use App\Http\Controllers\TransactionsController;
 use App\Http\Controllers\TransferController;
 use App\Http\Controllers\User\UserController;
 use App\Http\Controllers\WithdrawController;
-use App\Mail\TestMail;
-use App\Models\Ranking;
-use App\Models\Referral;
-use App\Models\Trade;
-use App\Models\TradeLog;
+
 use App\Models\Transaction;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Mail;

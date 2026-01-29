@@ -23,8 +23,8 @@ class AdminPanelProvider extends PanelProvider
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->id('gladiators')
-            ->path('gladiators')
+            ->id('admin')
+            ->path('admin')
             ->colors([
                 'primary' => Color::Purple,
             ])
