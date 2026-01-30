@@ -10,6 +10,13 @@
                                 <span class="caption">Deposit Wallet Balance</span>
                                 <h4 class="currency-amount">{{ config('app.currency') }}
                                     {{ (float) auth()->user()->wallet->deposit }}
+
+
+                                    <span class=" text-xs">
+
+                                        ({{ number_format($data['wallet']->deposit * 1.07 * $data['rates'][config('app.local-currency')]) . config('app.local-currency') }})
+                                    </span>
+
                                 </h4>
                             </div>
                             <div class="col-4">
@@ -25,6 +32,11 @@
                                 <span class="caption">Interest Wallet Balance</span>
                                 <h4 class="currency-amount">{{ config('app.currency') }}
                                     {{ (float) auth()->user()->wallet->profits }}
+
+                                    <span class=" text-xs">
+
+                                        ({{ number_format($data['wallet']->profits * 1.07 * $data['rates'][config('app.local-currency')]) . config('app.local-currency') }})
+                                    </span>
                                 </h4>
                             </div>
                             <div class="col-4">
@@ -40,6 +52,11 @@
                                 <span class="caption">Total Invest</span>
                                 <h4 class="currency-amount">{{ config('app.currency') }}
                                     {{ (float) $data['totalInvestments'] }}
+
+                                    <span class=" text-xs">
+
+                                        ({{ number_format($data['totalInvestments'] * 1.07 * $data['rates'][config('app.local-currency')]) . config('app.local-currency') }})
+                                    </span>
                                 </h4>
                             </div>
                             <div class="col-4">
@@ -55,6 +72,12 @@
                                 <span class="caption">Total Deposit</span>
                                 <h4 class="currency-amount">{{ config('app.currency') }}
                                     {{ (float) $data['totalDeposit'] }}
+
+
+                                    <span class=" text-xs">
+
+                                        ({{ number_format($data['totalDeposit'] * 1.07 * $data['rates'][config('app.local-currency')]) . config('app.local-currency') }})
+                                    </span>
                                 </h4>
                             </div>
                             <div class="col-4">
@@ -70,6 +93,11 @@
                                 <span class="caption">Total Withdraw</span>
                                 <h4 class="currency-amount"> {{ config('app.currency') }}
                                     {{ (float) $data['totalWithdrawal'] }}
+
+                                    <span class=" text-xs">
+
+                                        ({{ number_format($data['totalWithdrawal'] * 1.07 * $data['rates'][config('app.local-currency')]) . config('app.local-currency') }})
+                                    </span>
                                 </h4>
                             </div>
                             <div class="col-4">
@@ -85,6 +113,11 @@
                                 <span class="caption">Referral Earnings</span>
                                 <h4 class="currency-amount">{{ config('app.currency') }}
                                     {{ $data['totalReferralEarnings'] }}
+
+                                    <span class=" text-xs">
+
+                                        ({{ number_format($data['totalReferralEarnings'] * 1.07 * $data['rates'][config('app.local-currency')]) . config('app.local-currency') }})
+                                    </span>
                                 </h4>
                             </div>
                             <div class="col-4">
