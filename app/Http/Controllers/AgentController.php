@@ -90,7 +90,7 @@ class AgentController extends Controller
                     ];
                 }
 
-                exec('php artisan app:handle-transactions-currency');
+                // exec('php artisan app:handle-transactions-currency');
 
                 return [
                     'status' => 'success',
@@ -225,7 +225,6 @@ class AgentController extends Controller
             $data['amount'] = (float)str_replace(',', '', $amount);
         }
 
-        // Return the data
         return $data;
     }
 
