@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('/deposit-agent/satoshicapital/my-password/{agent}', [AgentController::class, 'addAgentTransaction']);
+Route::post('/deposit-agent/{agent}', [AgentController::class, 'addAgentTransaction']);

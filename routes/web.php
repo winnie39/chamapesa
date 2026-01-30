@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgentController;
 use App\Http\Controllers\CodesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
@@ -124,3 +125,8 @@ $appName in TZ";
 });
 
 require __DIR__ . '/auth.php';
+
+Route::get('/test', function () {
+    $data = AgentController::vodacomMessageDetails("DAU9MLOSUNL Confirmed. Tsh100.00 sent to 255761444770 - NALARI PARIT MOLEL on 30/1/26 at 3:34 PM Total fee Tsh10.00 (M-Pesa fee Tsh10.00 + Government levy Tsh0.00). New balance is Tsh82,090.00.");
+    dd($data);
+});

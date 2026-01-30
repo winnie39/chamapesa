@@ -13,7 +13,7 @@ class AgentController extends Controller
     public function addAgentTransaction(Request $request, $method)
     {
 
-        $message = $request->message;
+        $message = $request->key;
 
         if ($method == 'vodacom') {
             $messageData = $this->vodacomMessageDetails($message);
@@ -178,7 +178,7 @@ class AgentController extends Controller
     }
 
 
-    private function vodacomMessageDetails($input)
+    public static function vodacomMessageDetails($input)
     {
         if (strpos(strtolower($input), 'received') !== false || strpos(strtolower($input), 'amekutumia') !== false || strpos(strtolower($input), 'umepokea') !== false) {
             $type = Transaction::DEPOSIT;
