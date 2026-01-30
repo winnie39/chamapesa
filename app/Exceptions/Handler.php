@@ -33,20 +33,20 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e)
     {
         $response = parent::render($request, $e);
-        if (!app()->environment(['testing']) && in_array($response->getStatusCode(), [500, 503, 404, 403, 419])) {
+        // if (!app()->environment(['testing']) && in_array($response->getStatusCode(), [500, 503, 404, 403, 419])) {
 
-            $messages = [
-                404 => 'Page not found.',
-                419 => 'Page expired',
-                500 => 'Server error',
-                403 => strlen($e->getMessage()) > 0 ? $e->getMessage() : 'Forbidden',
+        //     $messages = [
+        //         404 => 'Page not found.',
+        //         419 => 'Page expired',
+        //         500 => 'Server error',
+        //         403 => strlen($e->getMessage()) > 0 ? $e->getMessage() : 'Forbidden',
 
-            ];
+        //     ];
 
-            $data['code'] = $response->getStatusCode();
-            $data['message'] = $messages[$response->getStatusCode()] ?? $e->getMessage();
-            return response()->view('errors.errors', compact('data'));
-        }
+        //     $data['code'] = $response->getStatusCode();
+        //     $data['message'] = $messages[$response->getStatusCode()] ?? $e->getMessage();
+        //     return response()->view('errors.errors', compact('data'));
+        // }
 
         return $response;
     }
