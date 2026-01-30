@@ -18,8 +18,8 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
-                                <th>Next payment</th>
                                 <th>Remaining Days</th>
+                                <th>Next payment</th>
                                 <th>Next payment amount</th>
 
                                 <th>Daily profits</th>
