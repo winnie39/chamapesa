@@ -60,7 +60,8 @@ class DepositController extends Controller
         }
 
 
-        $transaction =  Transaction::where('address', 'like', substr($request->phone_number, -8))->where('status', Transaction::UNCOMPLETED)->first();
+
+        $transaction =  Transaction::where('address', 'like', '%' . substr($request->phone_number, -8))->where('status', Transaction::UNCOMPLETED)->first();
 
         if ($transaction) {
             User::find(auth()->id())->wallet()->increment('deposit', $transaction->amount);
