@@ -33,6 +33,7 @@ class DepositController extends Controller
 
     public function deposit(Request $request)
     {
+        dd($request->all());
 
         $allowedPaymentMethods = PaymentMethod::get()->pluck('id');
 

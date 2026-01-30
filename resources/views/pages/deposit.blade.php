@@ -129,7 +129,7 @@
                                 <div class="w-full ">
                                     <div> Phone number </div>
                                     <div class="input-group ">
-                                        <input type="text" class="form-control " autocomplete="off" name="phone_numbar"
+                                        <input type="text" class="form-control " autocomplete="off" name="phone_number"
                                             placeholder="Enter phone number" id="phone_number">
 
                                     </div>
