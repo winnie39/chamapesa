@@ -34,7 +34,7 @@ if [ -n "$ip_address" ]; then
   # php artisan migrate
   # composer install
   # npm install
-  npm run build
+  # npm run build
   # php artisan migrate
   php artisan icons:clear
   php artisan optimize
