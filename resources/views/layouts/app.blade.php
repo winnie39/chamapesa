@@ -23,9 +23,6 @@
 
     <link rel="stylesheet" href="/assets/css/main.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-
-
     @component('components.whatsapp-meta')
     @endcomponent
 </head>
@@ -60,8 +57,14 @@
             <div class="header__bottom">
                 <div class="container">
                     <nav class="p-0 navbar navbar-expand-xl align-items-center">
-                        <a class="site-logo site-title" href="/home"><img src="/assets/images/logo.png"
-                                alt="site-logo"></a>
+                        <a class="site-logo site-title" href="/home">
+                            <div class=" inline-flex  place-items-center  items-end">
+
+                                <span class=" font-bold text-2xl   italic  text-yellow-600 font-serif">CHAMA</span>
+                                <span class=" font-bold text-xl italic  text-yellow-700 font-serif">PESA</span>
+                            </div>
+
+                        </a>
                         <ul class="account-menu mobile-acc-menu">
                             <li class="icon">
                                 <a href="/login"><i class="las la-user"></i></a>
