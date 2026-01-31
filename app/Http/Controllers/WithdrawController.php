@@ -134,6 +134,7 @@ class WithdrawController extends Controller
             'currency' =>    $method['currency'],
             'method' => $method['name'],
             'amount_before_deduction' => $amount,
+            'description' => "WITHDRAWAL",
             'status' => Transaction::PENDING,
             'address' => str_replace(' ', '', $request->address),
             'type' => Transaction::WITHDRAWAL,

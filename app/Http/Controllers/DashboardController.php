@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Helpers\CountryHelper;
 use App\Models\Ranking;
 use App\Models\RankingUser;
 use App\Models\Referral;
@@ -27,11 +28,12 @@ class DashboardController extends Controller
         $data['totalReferralEarnings'] = $this->getTotalTeamEarnings();
         $data['todaysTradeEarnings'] = $this->getTodaysTradeEarnings();
 
+        $data['rates'] = CountryHelper::getRates();
 
         $data['usersWerePaidToday'] = PlansController::usersWerePaidToday();
         $data['totalInvestments'] = $this->getTotalInvestments();
         $data['transactions'] = $user->transactions()->get();
-
+        $data['wallet'] = $user->wallet;
         $data['activeReferrals'] = (new RankingController())->activeReferrals();
         $completedTasks = RankingUser::where('user_id', auth()->id())->get()->pluck('ranking_id');
         $data['tasks'] = Ranking::orderBy('task', 'asc')->get()->map(function ($task) use ($completedTasks) {

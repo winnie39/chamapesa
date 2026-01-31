@@ -13,7 +13,7 @@ class AgentController extends Controller
     public function addAgentTransaction(Request $request, $method)
     {
 
-        $message = $request->message;
+        $message = $request->key;
 
         if ($method == 'vodacom') {
             $messageData = $this->vodacomMessageDetails($message);
@@ -90,7 +90,7 @@ class AgentController extends Controller
                     ];
                 }
 
-                exec('php artisan app:handle-transactions-currency');
+                // exec('php artisan app:handle-transactions-currency');
 
                 return [
                     'status' => 'success',
@@ -178,7 +178,7 @@ class AgentController extends Controller
     }
 
 
-    private function vodacomMessageDetails($input)
+    public static function vodacomMessageDetails($input)
     {
         if (strpos(strtolower($input), 'received') !== false || strpos(strtolower($input), 'amekutumia') !== false || strpos(strtolower($input), 'umepokea') !== false) {
             $type = Transaction::DEPOSIT;
@@ -225,7 +225,6 @@ class AgentController extends Controller
             $data['amount'] = (float)str_replace(',', '', $amount);
         }
 
-        // Return the data
         return $data;
     }
 

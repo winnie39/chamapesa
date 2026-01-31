@@ -81,11 +81,12 @@
                                 <li><a href="/dashboard">Dashboard</a></li>
                                 <li> <a href="/deposit">Deposit</a></li>
                                 <li> <a href="/withdraw">Withdraw</a></li>
+                                <li> <a href="/transactions">Transactions</a></li>
                                 <li> <a href="/plans">Plans</a></li>
                                 <li><a href="/team">My Team</a></li>
                                 <li><a href="/my-plans">My plans</a></li>
-                                <li><a href="/codes/plans">Promo withdrawals plans</a></li>
-                                <li><a href="/codes">Grab promo withdrawals</a></li>
+                                {{-- <li><a href="/codes/plans">Promo withdrawals plans</a></li> --}}
+                                {{-- <li><a href="/codes">Grab promo withdrawals</a></li> --}}
                                 @auth
 
                                     <li><a href="/logout">Logout</a></li>
@@ -153,10 +154,10 @@
                                             class="lab la-facebook-f"></i></a></li>
                                 <li><a href="#0" data-toggle="tooltip" data-placement="top" title="twitter"><i
                                             class="lab la-twitter"></i></a></li>
-                                <li><a href="#0" data-toggle="tooltip" data-placement="top"
-                                        title="pinterest"><i class="lab la-pinterest-p"></i></a></li>
-                                <li><a href="#0" data-toggle="tooltip" data-placement="top"
-                                        title="pinterest"><i class="lab la-pinterest-in"></i></a></li>
+                                <li><a href="#0" data-toggle="tooltip" data-placement="top" title="pinterest"><i
+                                            class="lab la-pinterest-p"></i></a></li>
+                                <li><a href="#0" data-toggle="tooltip" data-placement="top" title="pinterest"><i
+                                            class="lab la-pinterest-in"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -185,7 +186,7 @@
     <script>
         window.__lc = window.__lc || {};
         window.__lc.license = 17371428;;
-        (function(n, t, c) {
+        (function (n, t, c) {
             function i(n) {
                 return e._h ? e._h.apply(null, n) : e._q.push(n)
             }
@@ -193,23 +194,23 @@
                 _q: [],
                 _h: null,
                 _v: "2.0",
-                on: function() {
+                on: function () {
                     i(["on", c.call(arguments)])
                 },
-                once: function() {
+                once: function () {
                     i(["once", c.call(arguments)])
                 },
-                off: function() {
+                off: function () {
                     i(["off", c.call(arguments)])
                 },
-                get: function() {
+                get: function () {
                     if (!e._h) throw new Error("[LiveChatWidget] You can't use getters before load.");
                     return i(["get", c.call(arguments)])
                 },
-                call: function() {
+                call: function () {
                     i(["call", c.call(arguments)])
                 },
-                init: function() {
+                init: function () {
                     var n = t.createElement("script");
                     n.async = !0, n.type = "text/javascript", n.src = "https://cdn.livechatinc.com/tracking.js",
                         t.head.appendChild(n)

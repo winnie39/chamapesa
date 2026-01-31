@@ -33,14 +33,16 @@ class DepositController extends Controller
 
     public function deposit(Request $request)
     {
+        // dd($request->all());
 
         $allowedPaymentMethods = PaymentMethod::get()->pluck('id');
 
         $request->validate([
             'amount' => 'required|numeric|min:6.5',
             // 'transaction_id' => 'required|string|alpha_num|size:10',
-            'lastname' => 'required_if:method-parameter,mpesa',
-            'firstname' => 'required_if:method-parameter,mpesa',
+            // 'lastname' => 'required_if:method-parameter,mpesa',
+            // 'firstname' => 'required_if:method-parameter,mpesa',
+            'phone_number' => 'required|string',
         ], [
             'address.required' => 'This field is required',
             'method.required' => 'The payment method field is required',
@@ -48,13 +50,18 @@ class DepositController extends Controller
 
         ]);
 
+
+        // dd($request->all());
+
+
         if ($request->get('method-parameter') == 'crypto') {
 
             return redirect()->away($this->getNowPaymentInvoiceLink($request->amount));
         }
 
 
-        $transaction =  Transaction::where('address', 'like', strtoupper($request->firstname) . ' ' . strtoupper($request->lastname))->where('status', Transaction::UNCOMPLETED)->first();
+
+        $transaction =  Transaction::where('address', 'like', '%' . substr($request->phone_number, -8))->where('status', Transaction::UNCOMPLETED)->first();
 
         if ($transaction) {
             User::find(auth()->id())->wallet()->increment('deposit', $transaction->amount);

@@ -16,7 +16,6 @@ class TransactionsController extends Controller
         if (in_array($request->input('type'), $types)) {
             $type = $request->input('type');
             $type = 'WITHDRAWAL';
-            // $data['transactions'] = Transaction::where('user_id', auth()->id())->where('type', Transaction::)->latest()->get();
         }
 
         $data['transactions'] = Transaction::where('user_id', auth()->id())->latest()->get();
