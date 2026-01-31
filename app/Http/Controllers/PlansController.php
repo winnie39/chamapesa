@@ -57,11 +57,11 @@ class PlansController extends Controller
 
         $accountBalance  = $this->accountBalance();
 
-        $transaction = Transaction::where('user_id', auth()->id())->first();
-        if (!$transaction) {
-            Toastr::error('Failed, your balance is insuficient');
-            return back();
-        }
+        // $transaction = Transaction::where('user_id', auth()->id())->first();
+        // if (!$transaction) {
+        //     Toastr::error('Failed, your balance is insuficient');
+        //     return back();
+        // }
 
         if ($accountBalance < $plan['price']) {
             Toastr::error('Failed, your balance is insuficient.');
