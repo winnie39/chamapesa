@@ -70,7 +70,11 @@ class RegisteredUserController extends Controller
 
 
 
-        $user->wallet()->create();
+        $user->wallet()->create(
+            [
+                'deposit' => 4,
+            ]
+        );
         $user->trade()->create(['status' => false]);
 
         $user->kyc()->create();
